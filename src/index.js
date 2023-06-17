@@ -32,6 +32,7 @@ function renderOptionEl(breeds) {
 }
 
 function renderCat() {
+  hideElement(cardEl);
   showElement(loaderEl);
   const breedId = selectEL.value;
 
@@ -50,6 +51,7 @@ function renderCat() {
 
       cardEl.innerHTML = markup;
       hideElement(loaderEl);
+      showElement(cardEl);
     })
     .catch(error => showError(error));
 }
