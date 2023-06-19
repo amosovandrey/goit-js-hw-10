@@ -56,7 +56,10 @@ function renderCat() {
       hideElement(loaderEl);
       showElement(cardEl);
     })
-    .catch(error => showError(error));
+    .catch(error => {
+      showError(error);
+      hideElement(loaderEl);
+    });
 }
 
 function showError(error) {
