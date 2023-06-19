@@ -17,7 +17,10 @@ fetchBreeds()
     hideElement(loaderEl);
     selectEL.addEventListener('change', renderCat);
   })
-  .catch(error => showError(error));
+  .catch(error => {
+    hideElement(loaderEl);
+    showError(error);
+  });
 
 function renderOptionEl(breeds) {
   const markup = breeds
